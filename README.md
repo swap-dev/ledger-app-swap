@@ -1,7 +1,7 @@
-# ledger-app-monero
+# ledger-app-swap
 
 
-Monero wallet application for Ledger Blue and Nano S
+Swap wallet application for Ledger Blue and Nano S
 
 # Install from sources
 
@@ -14,9 +14,13 @@ Note this is only for testing. For production usage, use the application provide
 
 # Revision
 
-## v1.2.0
+## v1.2.2
 
-Targeted Client: Monero 0.14.0.0+
+Targeted Client: Swap GUI 2.8+
+
+Partial bug Fixes in change destination address computation: Only one destination is allowed in transfer command
+
+## v1.2.0
 
 - V11 fork integration
 - Fix change address issue.
