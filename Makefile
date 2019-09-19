@@ -36,8 +36,8 @@ ICONNAME = images/icon_monero.gif
 endif
 
 APPVERSION_M=1
-APPVERSION_N=3
-APPVERSION_P=2
+APPVERSION_N=4
+APPVERSION_P=0
 
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
 SPECVERSION="alpha"
@@ -176,5 +176,5 @@ include $(BOLOS_SDK)/Makefile.rules
 #add dependency on custom makefile filename
 dep/%.d: %.c Makefile
 
-
-#obj/usbd_impl.o: CFLAGS+=-DTARGET_NANOS
+listvariants:
+	@echo VARIANTS COIN monero
