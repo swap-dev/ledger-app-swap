@@ -1,7 +1,7 @@
-# ledger-app-monero
+# ledger-app-swap
 
 
-Monero wallet application for Ledger Blue and Nano S
+Swap wallet application for Ledger Blue and Nano S
 
 # Install from sources
 
@@ -17,12 +17,12 @@ Note this is only for testing. For production usage, use the application provide
 ## V1.4.0
 
 Add address display
-Enhence protocol security
-Remmove double ask for view key
+Enhance protocol security
+Remove double ask for view key
 
 ## V1.3.2
 
---
+Under the hood code changes
 
 ## V1.3.1
 
