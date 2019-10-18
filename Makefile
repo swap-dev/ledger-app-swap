@@ -35,7 +35,7 @@ else
 ICONNAME = images/icon_monero.gif
 endif
 
-DEFINES += MONERO_ALPHA
+#DEFINES += MONERO_ALPHA
 
 APPVERSION_M=1
 APPVERSION_N=4
