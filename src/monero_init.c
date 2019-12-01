@@ -164,15 +164,18 @@ int monero_apdu_reset() {
   unsigned int client_version_len;
   char client_version[16];
   client_version_len = G_monero_vstate.io_length - G_monero_vstate.io_offset;
-  if (client_version_len > 15) {
+  if (client_version_len > 14) {
     THROW(SW_CLIENT_NOT_SUPPORTED+1);
   }
   monero_io_fetch((unsigned char*)&client_version[0], client_version_len);
+  client_version[client_version_len] = '.';
+  client_version_len++;
   client_version[client_version_len] = 0;
   unsigned int i = 0;
   while(i < MONERO_SUPPORTED_CLIENT_SIZE) {
-    if ((strlen((char*)PIC(monero_supported_client[i])) == client_version_len) &&
-        (os_memcmp((char*)PIC(monero_supported_client[i]), client_version, client_version_len)==0) ) {
+    unsigned int monero_supported_client_len = strlen((char*)PIC(monero_supported_client[i]));
+    if ((monero_supported_client_len <= client_version_len) &&
+        (os_memcmp((char*)PIC(monero_supported_client[i]), client_version, monero_supported_client_len)==0) ) {
       break;
     }
     i++;
