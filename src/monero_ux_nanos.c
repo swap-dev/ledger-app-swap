@@ -244,13 +244,13 @@ void ui_menu_opentx_display(unsigned int value) {
 void ui_menu_amount_validation_action(unsigned int value);
 
 const ux_menu_entry_t ui_menu_fee_validation[] = {
-  {NULL,  NULL,                              1,      NULL, " Fee",     "?xmr?", 0, 0},
+  {NULL,  NULL,                              1,      NULL, " Fee",     "?xwp?", 0, 0},
   {NULL,  ui_menu_amount_validation_action,  REJECT, NULL,  "Reject",  "Fee",   0, 0},
   {NULL,  ui_menu_amount_validation_action,  ACCEPT, NULL,  "Accept",  "Fee",   0, 0},
   UX_MENU_END
 };
 const ux_menu_entry_t ui_menu_change_validation[] = {
-  {NULL,  NULL,                              1,      NULL, " Change",  "?xmr?",  0, 0},
+  {NULL,  NULL,                              1,      NULL, " Change",  "?xwp?",  0, 0},
   {NULL,  ui_menu_amount_validation_action,  REJECT, NULL,  "Reject",  "Change", 0, 0},
   {NULL,  ui_menu_amount_validation_action,  ACCEPT, NULL,  "Accept",  "Change", 0, 0},
   UX_MENU_END
@@ -292,7 +292,7 @@ void ui_menu_change_validation_display(unsigned int value) {
 void ui_menu_validation_action(unsigned int value);
 
 const ux_menu_entry_t ui_menu_validation[] = {
-  {NULL,  NULL,                       1,      NULL, " Amount",       "?xmr?",      0, 0},
+  {NULL,  NULL,                       1,      NULL, " Amount",       "?xwp?",      0, 0},
   {NULL,  NULL,                       3,      NULL,  "Destination",  "?dest.1?",   0, 0},
   {NULL,  NULL,                       4,      NULL,  "?dest.2?",     "?dest.2?",   0, 0},
   {NULL,  NULL,                       5,      NULL,  "?dest.3?",     "?dest.3?",   0, 0},
@@ -578,7 +578,7 @@ void ui_menu_settings_display(unsigned int value) {
 #define XSTR(x) STR(x)
 
 const ux_menu_entry_t ui_menu_about[] = {
-  {NULL,  NULL,                 -1, NULL,          "Monero",                     NULL, 0, 0},
+  {NULL,  NULL,                 -1, NULL,          "Swap",                     NULL, 0, 0},
   {NULL,  NULL,                 -1, NULL,          "(c) Ledger SAS",             NULL, 0, 0},
   {NULL,  NULL,                 -1, NULL,          "Spec  " XSTR(SPEC_VERSION),  NULL, 0, 0},
   {NULL,  NULL,                 -1, NULL,          "App  " XSTR(MONERO_VERSION), NULL, 0, 0},

@@ -83,9 +83,9 @@ void monero_init_private_key() {
   //generate account keys
 
   // m / purpose' / coin_type' / account' / change / address_index
-  // m / 44'      / 128'       / 0'       / 0      / 0
+  // m / 44'      / 10343'       / 0'       / 0      / 0
   path[0] = 0x8000002C;
-  path[1] = 0x80000080;
+  path[1] = 0x80002867;
   path[2] = 0x80000000|N_monero_pstate->account_id;
   path[3] = 0x00000000;
   path[4] = 0x00000000;
@@ -175,7 +175,7 @@ void monero_install(unsigned char netId) {
 /* ----------------------------------------------------------------------- */
 #define MONERO_SUPPORTED_CLIENT_SIZE 1
 const char * const monero_supported_client[MONERO_SUPPORTED_CLIENT_SIZE] = {
-  "0.15.0.",
+  "3.",
 };
 
 int monero_apdu_reset() {
