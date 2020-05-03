@@ -129,12 +129,12 @@ void monero_init_ux() {
   #ifdef HAVE_UX_FLOW
 
   #ifdef UI_NANO_X
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,5);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+7, G_monero_vstate.ux_address+95-5,5);
   G_monero_vstate.ux_wallet_public_short_address[12] = 0;
   #else 
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "     XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "     XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,4);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+6, G_monero_vstate.ux_address+95-4,4);  
   G_monero_vstate.ux_wallet_public_short_address[10] = 0;
@@ -142,7 +142,7 @@ void monero_init_ux() {
 
   #else
 
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,5);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+7, G_monero_vstate.ux_address+95-5,5);
   G_monero_vstate.ux_wallet_public_short_address[12] = 0;
