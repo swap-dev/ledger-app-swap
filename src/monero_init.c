@@ -82,10 +82,11 @@ void monero_init_private_key() {
 
   //generate account keys
 
-  // m/44'/10343'/0'/0/0
+  // m / purpose' / coin_type' / account' / change / address_index
+  // m / 44'      / 10343'       / 0'       / 0      / 0
   path[0] = 0x8000002C;
   path[1] = 0x80002867;
-  path[2] = 0x80000000;
+  path[2] = 0x80000000|N_monero_pstate->account_id;
   path[3] = 0x00000000;
   path[4] = 0x00000000;
   os_perso_derive_node_bip32(CX_CURVE_SECP256K1, path, 5 , seed, chain);
@@ -128,12 +129,12 @@ void monero_init_ux() {
   #ifdef HAVE_UX_FLOW
 
   #ifdef UI_NANO_X
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,5);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+7, G_monero_vstate.ux_address+95-5,5);
   G_monero_vstate.ux_wallet_public_short_address[12] = 0;
   #else 
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "     XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "     XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,4);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+6, G_monero_vstate.ux_address+95-4,4);  
   G_monero_vstate.ux_wallet_public_short_address[10] = 0;
@@ -141,7 +142,7 @@ void monero_init_ux() {
 
   #else
 
-  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XMR / %d", N_monero_pstate->account_id);
+  snprintf(G_monero_vstate.ux_wallet_account_name, sizeof(G_monero_vstate.ux_wallet_account_name), "XWP / %d", N_monero_pstate->account_id);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address, G_monero_vstate.ux_address,5);
   os_memmove(G_monero_vstate.ux_wallet_public_short_address+7, G_monero_vstate.ux_address+95-5,5);
   G_monero_vstate.ux_wallet_public_short_address[12] = 0;
@@ -174,7 +175,7 @@ void monero_install(unsigned char netId) {
 /* ----------------------------------------------------------------------- */
 #define MONERO_SUPPORTED_CLIENT_SIZE 5
 const char * const monero_supported_client[MONERO_SUPPORTED_CLIENT_SIZE] = {
-  "3.0.0", "3.0.1", "3.0.2", "3.0.3", "3.1.0"
+  "3.",
 };
 
 int monero_apdu_reset() {

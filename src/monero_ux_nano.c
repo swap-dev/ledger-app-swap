@@ -706,7 +706,7 @@ UX_STEP_NOCB(
   ux_menu_about_1a_step,
   bn,
   {
-    "Monero",
+    "Swap",
     "(c) Ledger SAS",
   });
 

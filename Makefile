@@ -24,7 +24,11 @@ endif
 include $(BOLOS_SDK)/Makefile.defines
 
 #Swap /44'/10343'
+<<<<<<< HEAD
 APP_LOAD_PARAMS=  --path "2147483692/2147493991" --curve secp256k1 $(COMMON_LOAD_PARAMS) --appFlags 0x40
+=======
+APP_LOAD_PARAMS=  --path "2147483692/2147493991" --curve secp256k1 $(COMMON_LOAD_PARAMS) --appFlags 0x240
+>>>>>>> v1.5.1
 APPNAME = "Swap"
 
 ifeq ($(TARGET_NAME),TARGET_BLUE)
@@ -63,7 +67,11 @@ endif
 
 #DEFINES += IOCRYPT
 ## Debug options
+<<<<<<< HEAD
 #DEFINES   += DEBUG_HWDEVICE
+=======
+DEFINES   += DEBUG_HWDEVICE
+>>>>>>> v1.5.1
 DEFINES   += IODUMMYCRYPT
 #DEFINES   += IONOCRYPT
 

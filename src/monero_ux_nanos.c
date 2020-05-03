@@ -244,13 +244,13 @@ void ui_menu_opentx_display(unsigned int value) {
 void ui_menu_amount_validation_action(unsigned int value);
 
 const ux_menu_entry_t ui_menu_fee_validation[] = {
-  {NULL,  NULL,                              1,      NULL, " Fee",     "?xmr?", 0, 0},
+  {NULL,  NULL,                              1,      NULL, " Fee",     "?xwp?", 0, 0},
   {NULL,  ui_menu_amount_validation_action,  REJECT, NULL,  "Reject",  "Fee",   0, 0},
   {NULL,  ui_menu_amount_validation_action,  ACCEPT, NULL,  "Accept",  "Fee",   0, 0},
   UX_MENU_END
 };
 const ux_menu_entry_t ui_menu_change_validation[] = {
-  {NULL,  NULL,                              1,      NULL, " Change",  "?xmr?",  0, 0},
+  {NULL,  NULL,                              1,      NULL, " Change",  "?xwp?",  0, 0},
   {NULL,  ui_menu_amount_validation_action,  REJECT, NULL,  "Reject",  "Change", 0, 0},
   {NULL,  ui_menu_amount_validation_action,  ACCEPT, NULL,  "Accept",  "Change", 0, 0},
   UX_MENU_END
@@ -577,12 +577,12 @@ void ui_menu_settings_display(unsigned int value) {
 #define STR(x)  #x
 #define XSTR(x) STR(x)
 
-const ux_menu_entry_t ui_menu_info[] = {
+const ux_menu_entry_t ui_menu_about[] = {
   {NULL,  NULL,                 -1, NULL,          "Swap",                     NULL, 0, 0},
-  {NULL,  NULL,                 -1, NULL,          "(c) Ledger SAS",           NULL, 0, 0},
-  {NULL,  NULL,                 -1, NULL,          "Spec  " XSTR(SPEC_VERSION),NULL, 0, 0},
-  {NULL,  NULL,                 -1, NULL,          "App  " XSTR(MONERO_VERSION),  NULL, 0, 0},
-  {NULL,  ui_menu_main_display,  3, &C_badge_back, "Back",                     NULL, 61, 40},
+  {NULL,  NULL,                 -1, NULL,          "(c) Ledger SAS",             NULL, 0, 0},
+  {NULL,  NULL,                 -1, NULL,          "Spec  " XSTR(SPEC_VERSION),  NULL, 0, 0},
+  {NULL,  NULL,                 -1, NULL,          "App  " XSTR(MONERO_VERSION), NULL, 0, 0},
+  {NULL,  ui_menu_main_display,  3, &C_badge_back, "Back",                       NULL, 61, 40},
   UX_MENU_END
 };
 
